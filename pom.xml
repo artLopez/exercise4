@@ -7,6 +7,34 @@
   <version>1.0-SNAPSHOT</version>
   <name>saci</name>
   <url>http://maven.apache.org</url>
+  <build> 
+   <plugins>  
+    <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-pmd-plugin</artifactId>
+          <version>3.4</version>
+          <executions>
+              <execution>
+                  <phase>verify</phase>
+                  <goals>
+                      <goal>check</goal>
+                  </goals>
+              </execution>
+          </executions>
+          <configuration>
+              <verbose>true</verbose>
+              <rulesets>
+                  <ruleset>/rulesets/java/braces.xml</ruleset>
+                  <ruleset>/rulesets/java/codesize.xml</ruleset>
+                  <ruleset>/rulesets/java/strings.xml</ruleset>
+                  <ruleset>/rulesets/java/unusedcode.xml</ruleset>
+              </rulesets>
+              <failOnViolation>true</failOnViolation>
+          </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
 
    <reporting>
       <plugins>
