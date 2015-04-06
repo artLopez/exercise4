@@ -1,38 +1,44 @@
 package edu.csumb.app;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Unit test for simple App.
  */
 public class AppTest 
-    extends TestCase
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+   
+    @Test
+    public void testNull(){
+         App checkSize  = new App();
+	 assertEquals(checkSize.getLength(""), 0);
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+   @Test
+   public void offByOne(){
+ 	App one = new App();
+	assertEquals(one.getLength("Hello, World"), 12);
+   }
+   @Test
+   public void checkIfFalse(){
+        App checker = new App();
+	assertFalse(checker.getLength("length") == 2);
+   } 
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+   @Test
+   public void checkIfNull(){
+        App checker = new App();
+        assertTrue(checker.checkNull("not null"));
+   }
+
+    @Test
+   public void checkNull(){
+        App checker = new App();
+        assertFalse(checker.checkNull(null));
+   }
+
 }

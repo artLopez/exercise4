@@ -8,7 +8,21 @@ public class App
 {
     public static void main( String[] args )
     {
-	String s = new String("this is a new string");
-        System.out.println( "Hello World!" );
+        System.out.println("Hello there");
+    }
+    int getLength(String str) {
+ 	   if (str == null) {
+        	return 0;
+    	} else {
+        	return str.length();
+    	}
+     
+    }
+
+    boolean checkNull(String word){
+         if(word == null){
+		return false;
+	}
+	 return true;  
     }
 }
