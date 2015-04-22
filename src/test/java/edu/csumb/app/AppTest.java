@@ -22,11 +22,13 @@ public class AppTest
    public void offByOne(){
  	App one = new App();
 	assertEquals(one.getLength("Hello, World"), 12);
+	
    }
    @Test
    public void checkIfFalse(){
         App checker = new App();
 	assertFalse(checker.getLength("length") == 2);
+	assertFalse(checker.getLength("length") == 3);
    } 
 
    @Test
